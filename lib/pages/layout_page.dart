@@ -57,12 +57,14 @@ class _LayoutPageState extends State<LayoutPage> {
           NavigationDestination(
             icon: Icon(
               Icons.home,
+              size: 28,
             ),
             label: "",
           ),
           NavigationDestination(
             icon: Icon(
               Icons.settings,
+              size: 28,
             ),
             label: "",
           ),
