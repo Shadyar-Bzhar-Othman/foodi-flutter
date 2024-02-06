@@ -15,6 +15,7 @@ class _LayoutPageState extends State<LayoutPage> {
   List<Widget> pages = [
     HomePage(),
     const Text("Second Page"),
+    const Text("Third Page"),
   ];
 
   @override
@@ -38,7 +39,7 @@ class _LayoutPageState extends State<LayoutPage> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: pages[selectedIndex],
       ),
       bottomNavigationBar: NavigationBar(
@@ -50,13 +51,20 @@ class _LayoutPageState extends State<LayoutPage> {
         },
         elevation: 16.0,
         shadowColor: blackColor,
-        backgroundColor: const Color.fromARGB(255, 238, 238, 238),
+        backgroundColor: whiteColor,
         indicatorColor: whiteColor,
         surfaceTintColor: whiteColor,
         destinations: const [
           NavigationDestination(
             icon: Icon(
               Icons.home,
+              size: 28,
+            ),
+            label: "",
+          ),
+          NavigationDestination(
+            icon: Icon(
+              Icons.shopping_cart,
               size: 28,
             ),
             label: "",

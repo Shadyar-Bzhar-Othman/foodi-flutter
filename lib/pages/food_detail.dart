@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodi/utils/colors.dart';
+import 'package:foodi/widgets/number_selecter.dart';
 
 class FoodDetail extends StatelessWidget {
   const FoodDetail({
@@ -103,41 +104,7 @@ class FoodDetail extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Container(
-                        padding: EdgeInsets.zero,
-                        decoration: BoxDecoration(
-                          color: primaryColor,
-                          borderRadius: BorderRadius.circular(16.0),
-                        ),
-                        child: Row(
-                          children: [
-                            IconButton(
-                              padding: EdgeInsets.zero,
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.add,
-                                color: whiteColor,
-                              ),
-                            ),
-                            const Text(
-                              "2",
-                              style: TextStyle(
-                                color: whiteColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            IconButton(
-                              padding: EdgeInsets.zero,
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.add,
-                                color: whiteColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      const NumberSelecter(),
                     ],
                   ),
                   const SizedBox(height: 15),
@@ -148,6 +115,75 @@ class FoodDetail extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        "Delivery Time:",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          const Icon(Icons.timer),
+                          const SizedBox(width: 5),
+                          Text(
+                            "$deliveryTime Minutes",
+                            style: const TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        surfaceTintColor: lightGreyColor,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            RichText(
+              text: TextSpan(
+                children: [
+                  const TextSpan(
+                    text: "Total Price: ",
+                    style: TextStyle(
+                      color: blackColor,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "$price\$",
+                    style: const TextStyle(
+                      color: primaryColor,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: const ButtonStyle(
+                backgroundColor: MaterialStatePropertyAll(primaryColor),
+                foregroundColor: MaterialStatePropertyAll(whiteColor),
+              ),
+              child: const Row(
+                children: [
+                  Icon(Icons.shopping_cart),
+                  SizedBox(width: 5),
+                  Text("Add to card"),
                 ],
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodi/pages/food_detail.dart';
 import 'package:foodi/widgets/h_food_card.dart';
 
 class FoodListPage extends StatefulWidget {
@@ -40,7 +41,22 @@ class _FoodListPageState extends State<FoodListPage> {
                 itemCount: foods.length,
                 itemBuilder: (context, index) {
                   return HFoodCard(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FoodDetail(
+                            name: foods[index]["name"],
+                            type: foods[index]["type"],
+                            imgPath: foods[index]["imgPath"],
+                            price: foods[index]["price"].toString(),
+                            detail: foods[index]["detail"],
+                            deliveryTime:
+                                foods[index]["deliveryTime"].toString(),
+                          ),
+                        ),
+                      );
+                    },
                     name: foods[index]["name"],
                     type: foods[index]["type"],
                     imgPath: foods[index]["imgPath"],
