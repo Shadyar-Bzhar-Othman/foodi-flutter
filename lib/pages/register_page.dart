@@ -21,7 +21,7 @@ class RegisterPage extends StatelessWidget {
       return;
     }
 
-    Navigator.push(
+    Navigator.pushReplacement(
       context,
       MaterialPageRoute(
         builder: (context) => LoginPage(),

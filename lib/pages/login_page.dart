@@ -20,7 +20,7 @@ class LoginPage extends StatelessWidget {
       return;
     }
 
-    Navigator.push(
+    Navigator.pushReplacement(
       context,
       MaterialPageRoute(
         builder: (context) => const LayoutPage(),
