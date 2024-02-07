@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodi/pages/cart_page.dart';
 import 'package:foodi/pages/home_page.dart';
 import 'package:foodi/utils/colors.dart';
 
@@ -31,7 +32,14 @@ class _LayoutPageState extends State<LayoutPage> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CartPage(),
+                ),
+              );
+            },
             icon: const Icon(
               Icons.shopping_cart,
             ),
@@ -64,7 +72,14 @@ class _LayoutPageState extends State<LayoutPage> {
           ),
           NavigationDestination(
             icon: Icon(
-              Icons.shopping_cart,
+              Icons.search,
+              size: 28,
+            ),
+            label: "",
+          ),
+          NavigationDestination(
+            icon: Icon(
+              Icons.notifications,
               size: 28,
             ),
             label: "",

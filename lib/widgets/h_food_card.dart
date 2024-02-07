@@ -96,7 +96,7 @@ class HFoodCard extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Text(
-                      "${price.toString()}\$",
+                      "\$${price.toString()}",
                       style: const TextStyle(
                         color: primaryColor,
                         fontSize: 14,

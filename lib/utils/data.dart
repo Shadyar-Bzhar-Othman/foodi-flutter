@@ -63,6 +63,39 @@ List<Map<String, dynamic>> foods = [
   },
 ];
 
+List<Map<String, dynamic>> cartFoods = [
+  {
+    "name": "Classic Margherita",
+    "imgPath": pizza1,
+    "type": "Vegetarian",
+    "price": 12,
+    "detail":
+        "A timeless favorite featuring homemade tomato sauce, fresh mozzarella, and basil leaves, drizzled with extra virgin olive oil.",
+    "deliveryTime": 30,
+    "category": "Pizza",
+  },
+  {
+    "name": "Grilled Salmon",
+    "imgPath": fish1,
+    "type": "Seafood",
+    "price": 18,
+    "detail":
+        "Perfectly grilled salmon served with a side of asparagus and a lemon butter sauce.",
+    "deliveryTime": 45,
+    "category": "Fish",
+  },
+  {
+    "name": "Seared Tuna",
+    "imgPath": fish2,
+    "type": "Seafood",
+    "price": 22,
+    "detail":
+        "Sesame-crusted tuna steak, lightly seared and served with a wasabi soy sauce.",
+    "deliveryTime": 50,
+    "category": "Fish",
+  },
+];
+
 List<Map<String, dynamic>> categories = [
   {
     "name": "Burger",

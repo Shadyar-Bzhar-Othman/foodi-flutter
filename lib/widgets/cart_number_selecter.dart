@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:foodi/utils/colors.dart';
 
-class NumberSelecter extends StatefulWidget {
-  const NumberSelecter({super.key});
+class CartNumberSelecter extends StatefulWidget {
+  const CartNumberSelecter({super.key});
 
   @override
-  State<NumberSelecter> createState() => _NumberSelecterState();
+  State<CartNumberSelecter> createState() => _CartNumberSelecterState();
 }
 
-class _NumberSelecterState extends State<NumberSelecter> {
+class _CartNumberSelecterState extends State<CartNumberSelecter> {
   int number = 1;
 
   @override
@@ -19,7 +19,7 @@ class _NumberSelecterState extends State<NumberSelecter> {
         color: primaryColor,
         borderRadius: BorderRadius.circular(16.0),
       ),
-      child: Row(
+      child: Column(
         children: [
           GestureDetector(
             onTap: () {
@@ -34,7 +34,6 @@ class _NumberSelecterState extends State<NumberSelecter> {
               color: whiteColor,
             ),
           ),
-          const SizedBox(width: 5),
           Text(
             number.toString(),
             style: const TextStyle(
@@ -43,7 +42,6 @@ class _NumberSelecterState extends State<NumberSelecter> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(width: 5),
           GestureDetector(
             onTap: () {
               setState(() {

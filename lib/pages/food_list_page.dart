@@ -31,7 +31,12 @@ class _FoodListPageState extends State<FoodListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("${widget.category} Foods"),
+        title: Text(
+          "${widget.category} Foods",
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         centerTitle: true,
       ),
       body: Padding(
