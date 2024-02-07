@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodi/pages/layout_page.dart';
+import 'package:foodi/pages/login_page.dart';
 import 'package:foodi/utils/colors.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class FoodiApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const LayoutPage(),
+      home: LoginPage(),
     );
   }
 }

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foodi/pages/layout_page.dart';
+import 'package:foodi/pages/register_page.dart';
+import 'package:foodi/utils/assets.dart';
 import 'package:foodi/widgets/custom_button.dart';
 import 'package:foodi/widgets/custom_text_field.dart';
 
@@ -10,14 +13,19 @@ class LoginPage extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  void login() {
+  void login(BuildContext context) {
     bool isValidate = _formKey.currentState!.validate();
 
     if (!isValidate) {
       return;
     }
 
-    print("Congratulation!");
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const LayoutPage(),
+      ),
+    );
   }
 
   @override
@@ -25,7 +33,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
+        child: ListView(
           children: [
             Stack(
               alignment: Alignment.bottomCenter,
@@ -33,7 +41,7 @@ class LoginPage extends StatelessWidget {
                 Container(
                   height: 200,
                   child: Image.asset(
-                    "assets/images/1.png",
+                    img,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -58,7 +66,6 @@ class LoginPage extends StatelessWidget {
                 ),
               ],
             ),
-            Expanded(child: Container()),
             Form(
               key: _formKey,
               child: Column(
@@ -66,10 +73,10 @@ class LoginPage extends StatelessWidget {
                   CustomTextField(
                     hintText: "Enter your Email",
                     controller: emailController,
-                    icon: Image.asset("assets/icons/mail.png"),
+                    icon: Image.asset(mailIcon),
                     onValidate: (value) {
                       if (value == null || value.isEmpty) {
-                        return "Can't be empty";
+                        return "It can't be empty";
                       }
                       return null;
                     },
@@ -78,10 +85,10 @@ class LoginPage extends StatelessWidget {
                   CustomTextField(
                     hintText: "Password",
                     controller: passwordController,
-                    icon: Image.asset("assets/icons/lock.png"),
+                    icon: Image.asset(lockIcon),
                     onValidate: (value) {
                       if (value == null || value.isEmpty) {
-                        return "Can't be empty";
+                        return "It can't be empty";
                       }
                       return null;
                     },
@@ -89,29 +96,38 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
-              flex: 3,
-              child: Container(),
-            ),
+            const SizedBox(height: 100),
             CustomButton(
               text: "Login",
-              onTap: login,
+              onTap: () {
+                login(context);
+              },
             ),
             const SizedBox(height: 10),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   "Don't have an account? ",
                   style: TextStyle(
                     fontSize: 12,
                   ),
                 ),
-                Text(
-                  "Register",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Color(0xffFF3951),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RegisterPage(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "Register",
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Color(0xffFF3951),
+                    ),
                   ),
                 ),
               ],
