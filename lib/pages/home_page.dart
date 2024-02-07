@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodi/pages/food_detail.dart';
 import 'package:foodi/pages/food_list_page.dart';
-import 'package:foodi/utils/assets.dart';
 import 'package:foodi/utils/data.dart';
 import 'package:foodi/widgets/category_card.dart';
 import 'package:foodi/widgets/h_food_card.dart';

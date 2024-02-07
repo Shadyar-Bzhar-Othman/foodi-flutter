@@ -15,8 +15,15 @@ class _LayoutPageState extends State<LayoutPage> {
 
   List<Widget> pages = [
     HomePage(),
-    const Text("Second Page"),
-    const Text("Third Page"),
+    const Center(
+      child: Text("Search Page"),
+    ),
+    const Center(
+      child: Text("Notification Page"),
+    ),
+    const Center(
+      child: Text("Settings Page"),
+    ),
   ];
 
   @override

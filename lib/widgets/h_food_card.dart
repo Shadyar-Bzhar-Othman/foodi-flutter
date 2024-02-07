@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodi/utils/colors.dart';
+import 'package:foodi/widgets/star.dart';
 
 class HFoodCard extends StatelessWidget {
   const HFoodCard({
@@ -64,36 +65,7 @@ class HFoodCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.star,
-                          color: Colors.amber,
-                          size: 18,
-                        ),
-                        Icon(
-                          Icons.star,
-                          color: Colors.amber,
-                          size: 18,
-                        ),
-                        Icon(
-                          Icons.star,
-                          color: Colors.amber,
-                          size: 18,
-                        ),
-                        Icon(
-                          Icons.star,
-                          color: Colors.amber,
-                          size: 18,
-                        ),
-                        Icon(
-                          Icons.star,
-                          color: Colors.grey,
-                          size: 18,
-                        ),
-                      ],
-                    ),
+                    const Star(size: 18),
                     const SizedBox(height: 5),
                     Text(
                       "\$${price.toString()}",

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodi/utils/colors.dart';
 import 'package:foodi/widgets/number_selecter.dart';
+import 'package:foodi/widgets/star.dart';
 
 class FoodDetail extends StatelessWidget {
   const FoodDetail({
@@ -54,36 +55,7 @@ class FoodDetail extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.star,
-                              color: Colors.amber,
-                              size: 20,
-                            ),
-                            Icon(
-                              Icons.star,
-                              color: Colors.amber,
-                              size: 20,
-                            ),
-                            Icon(
-                              Icons.star,
-                              color: Colors.amber,
-                              size: 20,
-                            ),
-                            Icon(
-                              Icons.star,
-                              color: Colors.amber,
-                              size: 20,
-                            ),
-                            Icon(
-                              Icons.star,
-                              color: Colors.grey,
-                              size: 20,
-                            ),
-                          ],
-                        ),
+                        const Star(),
                         Text(
                           "\$${price.toString()}",
                           style: const TextStyle(
